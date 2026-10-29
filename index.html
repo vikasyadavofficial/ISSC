@@ -169,11 +169,12 @@ const EM="vy445617@hotmail.com";
 const clean=(v,max,multi)=>String(v==null?"":v).replace(multi?/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g:/[\u0000-\u001f\u007f]/g," ").trim().slice(0,max);
 const nav=[["observations","Observations"],["articles","Articles"],["videos","Videos"],["vision","Vision"],["membership","Membership"],["contact","Contact"],["plate-solver","ISSC Plate Solver","https://vikasyadavofficial.github.io/PLATESOLVING/"]];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fc=[{date:"2026-10-25",claim:"Watching a lunar eclipse harms your eyes and brings bad fortune.",verdict:"False",image:I.lunar,points:[
-"A lunar eclipse happens when the Earth passes between the Sun and the Moon, and Earth’s shadow falls on the Moon. It is a natural event that can be predicted years in advance.",
-"It is completely safe to watch a lunar eclipse with your naked eyes, binoculars or a telescope. The Moon only reflects sunlight, and during an eclipse it becomes even dimmer. (Only a solar eclipse needs special eye protection.)",
-"There is no scientific evidence that an eclipse brings bad luck, affects food, pregnancy or anyone’s fortune. These are old beliefs from a time when people did not understand why the Moon turned red.",
-"The red colour of the eclipsed Moon comes from sunlight bending through Earth’s atmosphere — the same reason sunsets look red."]}];
+const fc=[{date:"2026-10-29",claim:"The positions of the planets and stars at your birth decide your personality, health and fortune.",verdict:"False",points:[
+"The planets are millions of kilometres away. Their gravitational pull on a person is tiny, far smaller than the pull of the doctor, the walls and the building around a newborn baby. Light and radiation from planets reaching us are also far too weak to affect a human body or mind.",
+"Astrology has been tested. In a well-known double-blind experiment published in the journal Nature in 1985, astrologers could not match people’s birth charts to their personality profiles any better than chance.",
+"Astrology’s zodiac signs no longer match the sky. Because Earth’s axis slowly wobbles, the constellations have shifted by about one sign since the system was invented thousands of years ago.",
+"Horoscopes feel personal because they are written in vague words that fit almost anyone. This is called the Barnum or Forer effect, and people tend to remember the lines that fit and forget the ones that do not.",
+"Astronomy can predict where planets and asteroids will be with great accuracy, and that is real science. Knowing where a planet is does not tell us anything about the life of a person on Earth."]}];
 const fdate=d=>new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"});
 
 function joinForm(kind){
@@ -231,6 +232,13 @@ home:()=>`<section class="wrap sec grid2"><div><h1 class="h-xl">Indian Society f
 <p style="margin:1rem 0 0;font-size:.95rem">I developed an online plate solver using the Astrometry.net API. Plate solving analyses an astronomical image, identifies the star patterns in it, and matches them to a star catalogue to determine where the image points in the sky. This can help astronomers identify the celestial field captured in an image and learn its position and orientation.</p>
 <p style="margin:1rem 0 0;font-size:.9rem">Explore the tool and see how patterns of stars can reveal where an astronomical image belongs in the night sky.</p>
 <a class="btn sm" style="margin-top:1.5rem;align-self:flex-start" href="https://vikasyadavofficial.github.io/PLATESOLVING/" target="_blank" rel="noopener noreferrer">Launch ISSC Plate Solver</a>
+</div>
+<div class="card" style="padding:2rem;max-width:52rem;margin:1.5rem auto 0">
+<h2 style="font-size:2rem;font-weight:700">Asteroid Explorer</h2>
+<p style="margin:1rem 0 0;font-size:.95rem"><strong>What it is.</strong> Asteroid Explorer is a free web page where you can look up any known asteroid or comet by its name, number or designation. It shows what kind of object it is, the shape and size of its orbit around the Sun, how well that orbit is known, and physical details such as size and rotation when they have been measured.</p>
+<p style="margin:1rem 0 0;font-size:.95rem"><strong>How it works.</strong> When you search, the page sends your request to a small server program that I wrote (a Cloudflare Worker). The Worker checks the request, asks NASA’s database for the object, and sends back a tidy answer. Every value is shown with its unit and uncertainty, and anything NASA has no value for is shown as “Not available” instead of a guess.</p>
+<p style="margin:1rem 0 0;font-size:.95rem"><strong>Where the data comes from.</strong> All data comes from the NASA/JPL Small-Body Database (SBDB), maintained by NASA’s Jet Propulsion Laboratory. I do not change the values. <a href="https://ssd-api.jpl.nasa.gov/doc/sbdb.html" target="_blank" rel="noopener noreferrer">Read the SBDB documentation</a>.</p>
+<a class="btn sm" style="margin-top:1.5rem;align-self:flex-start" href="https://vikasyadavofficial.github.io/asteroid-explorer/" target="_blank" rel="noopener noreferrer">Launch Asteroid Explorer</a>
 </div></section>
 <section class="wrap sec" style="padding-top:5rem;padding-bottom:5rem"><h2 style="text-align:center;font-size:2.25rem;font-weight:700">How We Promote Science</h2>
 <p class="muted" style="text-align:center;max-width:42rem;margin:1rem auto 0">We share science through clear explanations, careful observation, practical exploration, and the habit of asking why.</p>
